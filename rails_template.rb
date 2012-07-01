@@ -147,7 +147,7 @@ remove_file 'app/models/user.rb'
 remove_file 'app/models/admin.rb'
 get @path + 'app/models/user.rb', 'app/models/user.rb'
 get @path + 'app/models/admin.rb', 'app/models/admin.rb'
-get 'https://github.com/muhammetdilek/rails_template/raw/master/files/app/assets/images/default-avatar.gif', 'app/assets/images/default-avatar.gif'
+get 'https://github.com/lab2023/template/raw/master/files/app/assets/images/default-avatar.gif', 'app/assets/images/default-avatar.gif'
 
 rake 'db:migrate'
 
