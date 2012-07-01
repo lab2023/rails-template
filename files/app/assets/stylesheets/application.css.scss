@@ -1,0 +1,90 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require bootstrap-datepicker
+ *= require_tree .
+*/
+
+@import "compass";
+@import "bootstrap";
+body {
+  padding-top: 60px;
+  background-color: #eee;
+}
+@import "bootstrap-responsive";
+.brand {
+  margin-left: 35px !important;
+  img {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: -5px;
+  }
+}
+
+div.container, div.container-fluid  {
+  div.wrapper {
+    border:1px solid rgba(0, 0, 0, 0.35);
+    @include border-radius(5px);
+    @include box-shadow(rgba(0, 0, 0, 0.35) 0 0 20px);
+    background-color: #fff;
+
+    div.wrap {
+      padding: 20px;
+
+      div.head {
+        @include border-top-radius(5px);
+        @include background-image(linear-gradient(white, #e1e1e1));
+
+        padding: 0 20px;
+        margin: -10px -20px 20px -20px;
+        min-height: 45px;
+        border-bottom: 1px solid #cdcdcd;
+        position: relative;
+        background-color: #e1e1e1;
+        background-repeat: repeat-x;
+
+        div.pull-left {
+          h2 {
+            padding: 5px 0 0 0;
+            line-height: 24px;
+          }
+        }
+
+        div.title {
+          text-align: center;
+        }
+
+        div.pull-right {
+          padding-top: 5px;
+          text-align: right;
+        }
+
+      }
+
+    }
+    div.form-actions {
+      margin-left: -20px;
+      margin-right: -20px;
+      margin-bottom: -36px;
+    }
+
+  }
+
+  div.soft-wrapper {
+    @extend div.wrapper;
+    margin: auto;
+    width: 500px;
+  }
+}
+
+#add_button {
+  float: left;
+}

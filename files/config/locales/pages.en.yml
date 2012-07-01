@@ -1,0 +1,35 @@
+en:
+  tooltips:
+    new: New
+    edit: Edit
+    delete: Delete
+    show: Show
+    back: Back
+    change_password: Change password
+  confirm: Are you sure?
+  accounts:
+    new:
+      sign_up_free: Sign up free
+  devise:
+    links:
+      sign_up_free: Sign up free
+      sign_in: Sign in
+      forget_your_password: Forgot your password?
+      didnt_receive_confirmation_instruction: Didn't receive confirmation instructions?
+      didnt_receive_unlock_instructions: Didn't receive unlock instructions?
+    confirmations:
+      new:
+        title: Resend confirmation instructions
+    passwords:
+      new:
+        title: Forgot your password?
+      edit:
+        title:
+    sessions:
+      new:
+        title: Sign in coNinja
+      new_admin:
+        title: Admin Sign in
+    unlocks:
+      new:
+        title: Resend unlock instructions

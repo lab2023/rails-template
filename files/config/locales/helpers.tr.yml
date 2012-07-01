@@ -1,0 +1,14 @@
+tr:
+  helpers:
+    submit:
+      create: "%{model} oluştur"
+      update: "%{model} güncelle"
+      account:
+        create: Ücretsiz bir hesap oluşturun
+      devise:
+        sessions: Giriş yapın
+        passwords:
+          create: Şifre sıfırlama mailini gönderin
+          update:
+        confirmations: Onaylama mailini tekrar gönderin
+        unlocks: Kilidi açma mailini tekrar gönderin

@@ -1,0 +1,15 @@
+= title t('tt.new', resource_name: "Üyelik")
+
+.row-fluid
+  .span7
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true, :html => {:class => 'form-horizontal validate'}, :defaults => {:input_html => {:class => 'span10'}}) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name, :required => true, :autofocus => true
+        = f.input :email, :required => true
+        = f.input :password, :required => true
+        = f.input :password_confirmation, :required => true
+      .form-actions
+        = f.button :submit, "Üye Ol"
+    = render :partial => "devise/shared/links"
+  .span5

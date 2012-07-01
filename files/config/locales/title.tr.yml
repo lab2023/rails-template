@@ -1,0 +1,14 @@
+tr:
+  tt:
+    index: "%{resource_name} listesi"
+    edit: "%{resource_name} düzenle"
+    new: "Yeni %{resource_name}"
+    show: Detay
+    sign_in: Giriş
+    dashboard:
+      welcome: Hoşgeldiniz
+    profile:
+      show: Profil
+      edit: Profil güncelleme
+    password:
+      edit: Şifreyi değiştir

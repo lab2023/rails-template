@@ -1,0 +1,5 @@
+= title t('tt.edit', resource_name: <%= singular_table_name.capitalize %>.model_name.human)
+- content_for :toolbar_left do
+  = link_to(<%= index_helper %>_path , class: 'btn', rel: 'tooltip', title: t('tooltips.back')) do
+    %i.icon-arrow-left
+= render 'form'

@@ -1,0 +1,13 @@
+tr:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} başarı ile oluşturuldu.'
+      update:
+        notice: '%{resource_name} başarı ile güncellendi.'
+      destroy:
+        notice: '%{resource_name} başarı ile silindi.'
+        alert: '%{resource_name} silinemedi.'
+    password:
+      update:
+        notice: 'Şifre başarı ile güncellendi.'

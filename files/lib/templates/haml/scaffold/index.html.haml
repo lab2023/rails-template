@@ -1,0 +1,25 @@
+= title t('tt.index', resource_name: <%= singular_table_name.capitalize %>.model_name.human)
+
+- content_for :toolbar_left do
+  = link_to(new_<%= singular_table_name %>_path, class: 'btn', rel: 'tooltip', title: t('tooltips.new')) do
+    %i.icon-plus
+
+
+%table.table.table-striped.table-bordered.table-condensed
+  %tr
+<% for attribute in attributes -%>
+    %th <%= attribute.human_name %>
+<% end -%>
+    %th{:width => "120px"}
+  - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    %tr
+<% for attribute in attributes -%>
+      %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+      %td
+        = link_to(<%= singular_table_name %>, class: 'btn', rel: 'tooltip', title: t('tooltips.show')) do
+          %i.icon-eye-open
+        = link_to(edit_<%= singular_table_name %>_path(<%= singular_table_name %>) , class: 'btn', rel: 'tooltip', title: t('tooltips.edit')) do
+          %i.icon-pencil
+        = link_to(<%= singular_table_name %>, class: 'btn', confirm: t('confirm'), method: :delete, rel: 'tooltip', title: t('tooltips.delete')) do
+          %i.icon-trash

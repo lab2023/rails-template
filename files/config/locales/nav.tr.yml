@@ -1,0 +1,19 @@
+tr:
+  nav:
+    dashboard: Pano
+    profile: Profil
+    signout: Çıkış
+    signup: Üye Ol
+    signin: Giriş Yap
+    edit: Bilgileri Düzenle
+    settings: Ayarlar
+    forgot_password: Şifrenizi mi unuttunuz ?
+    not_confirm_mail: Onay maili almadınız mı ?
+    not_unlock_mail: Hesabı kilitleme maili almadınız mı ?
+
+
+
+
+
+
+

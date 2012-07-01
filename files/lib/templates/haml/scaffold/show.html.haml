@@ -1,0 +1,13 @@
+= title t('tt.show', resource_name: <%= singular_table_name.capitalize %>.model_name.human)
+
+- content_for :toolbar_left do
+  = link_to(<%= index_helper %>_path , class: 'btn', rel: 'tooltip', title: t('tooltips.back')) do
+    %i.icon-arrow-left
+
+  = link_to(edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn', rel: 'tooltip', title: t('tooltips.edit')) do
+    %i.icon-pencil
+
+= show_for @<%= singular_name %> do |s|
+<% attributes.each do |attribute| -%>
+  = s.<%= attribute.reference? ? :association : :attribute %> :<%= attribute.name %>
+<% end -%>

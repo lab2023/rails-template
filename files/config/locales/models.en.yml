@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      role: Role
+      user: User
+
+    attributes:
+      created_at: "Created at"
+      updated_at: "Updated at"
+      role:
+        name: Name
+      user:
+        name: Full name
+        admin: Admin
+        email: Email
+        password: Password
+        locale: Dil
+        remember_me: Remember me
+        time_zone: Time zone

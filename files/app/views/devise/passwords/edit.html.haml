@@ -1,0 +1,11 @@
+= title "Şifrenizi Değiştir"
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+  = f.error_notification
+  = f.input :reset_password_token, :as => :hidden
+  = f.full_error :reset_password_token
+  .inputs
+    = f.input :password, :label => "Yeni şifre", :required => true
+    = f.input :password_confirmation, :label => "Yani şifreyi onayla", :required => true
+  .actions
+    = f.button :submit, "Şifremi değiştir"
+= render :partial => "devise/shared/links"

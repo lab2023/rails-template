@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    errors:
+      messages:
+        taken: "has already been taken"
+        record_invalid: "Validation failed: %{errors}"
+      machine:
+        engine_time_should_be_greater: "Greater engine time value is saved at system."
+        kilometer_should_be_greater: "Greater kilometer value is saved at system."
+      engine_time:
+        indicator_should_greater: "A larger engine hours before the date of %{date} registered in the system."
+        indicator_should_lesser: "A lesser engine hours after the date of %{date} registered in the system."
+      kilometer:
+        indicator_should_greater: "A larger kilometer amount before the date of  %{date} registered in the system."
+        indicator_should_lesser: "A lesser kilometer amount after the date of %{date} registered in the system."
+      machine_activity:
+        machine_work_this_time_interval: "Machine was working an other activity at system. Please check!"
+      fuel_movement:
+        cant_insert_future_record: "You can save future fuel movement activities."

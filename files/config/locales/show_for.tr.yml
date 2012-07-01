@@ -1,0 +1,5 @@
+tr:
+  show_for:
+    blank: "Belirtilmemiş"
+    "yes": "Evet"
+    "no": "Hayır"

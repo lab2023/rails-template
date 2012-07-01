@@ -1,0 +1,13 @@
+en:
+  tt:
+    index: "%{resource_name} list"
+    edit: "Editing %{resource_name}"
+    new: "New %{resource_name}"
+    show: Detail
+    dashboard:
+      welcome: Welcome
+    profile:
+      show: Profile
+      edit: Update profile
+    password:
+      edit: Change password

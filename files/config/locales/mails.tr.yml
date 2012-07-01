@@ -1,0 +1,18 @@
+tr:
+  mails:
+    devise:
+      confirmation:
+        p1: "Merhaba %{name}"
+        p2: "Aşağıdaki bağlantı ile hesabınızın emailini onaylayabilirsiniz::"
+        p3: Hesabınızı onaylayın
+      unlock:
+        p1: "Merhaba %{name}"
+        p2: Your account has been locked due to an excessive amount of unsuccessful sign in attempts.
+        p3: "Hesabınızda ki kilidi açmak için aşağıdaki bağlantıya tıklayınız:"
+        p4: Hesabımın kilidini açın
+      reset_password:
+        p1: "Merhaba %{name}"
+        p2: Birisi şifrenizin değiştirilmesi için talepte bulunuldu, ve aşağıdaki bağlantı ile şifrenizi değiştirebilirsiniz.
+        p3: Şifremi değiştirin
+        p4: Eğer bu isteği siz yapmadıysanız, lüften bu maili göz ardı edin.
+        p5: Şifreniz, aşağıdaki bağlantıya ulaştıktan sonra yeni bir  şifre yaratmadıkça değilmeyecektir.

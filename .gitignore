@@ -1,0 +1,17 @@
+.bundle
+db/*.sqlite3
+db/database.yml
+log/*.log
+log/*.pid
+.sass-cache/
+tmp/**/*
+.rvmrc
+.DS_Store
+db-dumps
+**/.DS_Store
+nbproject/**/*
+.yardoc/**/*
+.yardoc
+nbproject
+.idea
+.idea/**/*

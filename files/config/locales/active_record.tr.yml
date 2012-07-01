@@ -1,0 +1,19 @@
+tr:
+  activerecord:
+    errors:
+      messages:
+        taken: "hali hazırda kullanılmakta"
+        record_invalid: "Doğrulama başarısız oldu: %{errors}"
+      machine:
+        engine_time_should_be_greater: "Daha büyük bir motor zamanı sistemde kayıtlıdır."
+        kilometer_should_be_greater: "Daha büyük bir kilometre değeri sistemde kayıtlıdır."
+      engine_time:
+        indicator_should_greater: "%{date} tarihten önce daha büyük bir motor saati sistemde kayıtlıdır."
+        indicator_should_lesser: "%{date} tarihten sonra daha küçük bir motor saati sistemde kayıtlıdır."
+      kilometer:
+        indicator_should_greater: "%{date} tarihten önce daha büyük bir kilometre değeri sistemde kayıtlıdır."
+        indicator_should_lesser: "%{date} tarihten sonra daha küçük bir kilometre değeri sistemde kayıtlıdır."
+      machine_activity:
+        machine_work_this_time_interval: "Makine bu tarihler arasında başka bir iş yapıyor gözüküyor. Lütfen kontrol ediniz."
+      fuel_movement:
+        cant_insert_future_record: "Gelecekte gerçekleşen bir akaryakıt hareketi yapamazsınız."

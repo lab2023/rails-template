@@ -1,0 +1,7 @@
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-inline'}) do |f|
+  .inputs
+    = f.input :email, :label => false
+    = f.input :password, :label => false
+    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+  .actions
+    = f.button :submit, t('nav.signin')

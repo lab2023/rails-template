@@ -1,0 +1,20 @@
+= title t('tt.edit', resource_name: "Profil")
+.row-fluid
+  .span7
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true, :html => { :method => :put, :class => 'form-horizontal validate' }, :defaults => {:input_html => {:class => 'span10'}}) do |f|
+      = f.error_notification
+      .inputs
+        = f.input :email, :required => true, :autofocus => true
+        = f.input :name, :required => true
+        = f.input :avatar
+
+
+        = f.input :password, :autocomplete => "off", :hint => "Burayı boş bırakırsanız şifreniz değişmeyecektir.", :required => false
+        = f.input :password_confirmation, :required => false
+        = f.input :current_password, :hint => "Bilgilerinizi güncelleyebilmemiz için şifrenize igtiyecımız var.", :required => true
+      .form-actions
+        = f.button :submit, "Kaydet"
+    %p
+      Mutsuz musun ? #{link_to "Hesabımı Sil", registration_path(resource_name), :confirm => 'Göktürk\'ten ayrılmak istediğinizden eminmisiniz ?' , :method => :delete}.
+
+  .span5

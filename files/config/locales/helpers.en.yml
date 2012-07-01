@@ -1,0 +1,14 @@
+en:
+  helpers:
+    submit:
+      create: "Create a %{model}"
+      update: "Confirm changes to %{model}"
+      account:
+        create: Create a free account
+      devise:
+        sessions: Sign in
+        passwords:
+          create: Send me reset password instructions
+          update:
+        confirmations: Resend confirmation instructions
+        unlocks: Resend unlock instructions

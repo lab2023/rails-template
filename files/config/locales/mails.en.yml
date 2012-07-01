@@ -1,0 +1,18 @@
+en:
+  mails:
+    devise:
+      confirmation:
+        p1: "Welcome %{name}"
+        p2: "You can confirm your account email through the link below:"
+        p3: Confirm my account
+      unlock:
+        p1: "Hello %{name}"
+        p2: Your account has been locked due to an excessive amount of unsuccessful sign in attempts.
+        p3: "Click the link below to unlock your account:"
+        p4: Unlock my account
+      reset_password:
+        p1: "Hello %{name}"
+        p2: Someone has requested a link to change your password, and you can do this through the link below.
+        p3: Change my password
+        p4: If you didn't request this, please ignore this email.
+        p5: Your password won't change until you access the link above and create a new one.

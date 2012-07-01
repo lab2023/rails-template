@@ -1,0 +1,8 @@
+= title "Şifrenizi mi Unuttunuz ?"
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+  = f.error_notification
+  .inputs
+    = f.input :email, :required => true
+  .actions
+    = f.button :submit, "Şifre sıfırlama maili gönder"
+= render :partial => "devise/shared/links"
