@@ -1,4 +1,4 @@
-Copyright (C) 2012 Lab2023, http://lab2023.com
+Copyright (C) 2012 lab2023 - internet technologies, http://lab2023.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
