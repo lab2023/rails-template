@@ -1,7 +1,18 @@
 # Rails Template
 
-This template includes `devise`, `simple_form`, `responder`, `show_for`, `paperclip`, `will_paginate`, `haml`, 
-`bootstrap-datepicker-rails` and `bootstrap` gems. Scaffold generator views which were changed under `lib/templates`
+This template includes 
+
+* `devise` 
+* `simple_form` 
+* `responder` 
+* `show_for` 
+* `paperclip` 
+* `will_paginate`
+* `haml`
+* `bootstrap-datepicker-rails` 
+* `bootstrap` 
+
+gems. Scaffold generator views which were changed under `lib/templates`
 folder in templates.  When you use scaffolding, views are generated from these views. Template creates Admin namespace.
 Admins don't use normal users table, they use admins table for authenticating. There is `dev.rake` in `lib/tasks` folder.
 This rake do 
