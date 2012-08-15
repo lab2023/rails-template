@@ -11,9 +11,55 @@
 
 @path = 'https://raw.github.com/lab2023/template/master/files/'
 
-#####################################################
+if yes?('Would you like to use the Sphinx search system? (yes/no)')
+  sphinx_flag = true
+else
+  sphinx_flag = false
+end
+
+if sphinx_flag
+  puts "Adding thinking-sphinx gem ..."
+  gem 'thinking-sphinx'
+end
+
+if yes?('Would you like to use resque for background job? (yes/no)')
+  resque_flag = true
+else
+  resque_flag = false
+end
+
+if resque_flag
+  puts "Adding resque gem ..."
+  gem 'resque'
+  puts "Creating lib/tasks/resque.rake ..."
+  create_file 'lib/tasks/resque.rake' do <<-'FILE'
+  require "resque/tasks"
+  task "resque:setup" => :environment
+  FILE
+  end
+end
+
+if yes?('Would you like to use resque_mailer for sending email with background job? (yes/no)')
+  resque_mailer = true
+else
+  resque_mailer = false
+end
+
+if resque_mailer
+  puts "Adding resque_mailer gem  ..."
+  gem 'resque_mailer'
+  puts "Creating config/initializers/resque_mailer.rb ..."
+  create_file 'config/initializers/resque_mailer.rb' do <<-'FILE'
+  class AsyncMailer < ActionMailer::Base
+    include Resque::Mailer
+    layout 'email'
+  end
+  FILE
+  end
+end
+
 # Gems
-#####################################################
+
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem "will-paginate-i18n", "~> 0.1.7"
@@ -26,6 +72,7 @@ gem 'simple_form'
 gem 'i18n'
 gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
+
 
 gem_group :assets do
   gem 'bootstrap-sass'
@@ -41,18 +88,18 @@ gem_group :production do
   gem 'mysql2'
 end
 
-#####################################################
+
 # Bundle
-#####################################################
+
 run 'bundle install'
 rake 'db:drop'
 rake 'db:create'
 rake 'db:migrate'
 
 
-#####################################################
+
 # Lib
-#####################################################
+
 # Haml views
 get @path + 'lib/templates/haml/scaffold/edit.html.haml', 'lib/templates/haml/scaffold/edit.html.haml'
 get @path + 'lib/templates/haml/scaffold/index.html.haml', 'lib/templates/haml/scaffold/index.html.haml'
@@ -66,14 +113,14 @@ get @path + 'lib/templates/rails/responders_controller/controller.rb', 'lib/temp
 get @path + 'lib/tasks/dev.rake', 'lib/tasks/dev.rake'
 
 
-#####################################################
+
 # SettingsLogic
-#####################################################
+
 get @path + 'settings_logic/config.yml', 'config/application.yml'
 
-#####################################################
+
 # Application Layout
-#####################################################
+
 remove_file 'app/views/layouts/application.html.erb'
 get @path + 'app/views/layouts/application.html.haml', 'app/views/layouts/application.html.haml'
 get @path + 'app/views/layouts/admins/application.html.haml', 'app/views/layouts/admins/application.html.haml'
@@ -84,15 +131,15 @@ get @path + 'app/assets/javascripts/jquery.validate.js', 'app/assets/javascripts
 get @path + 'app/assets/javascripts/jquery.validate.bootstrap.js', 'app/assets/javascripts/jquery.validate.bootstrap.js'
 get @path + 'app/assets/stylesheets/application.css.scss', 'app/assets/stylesheets/application.css.scss'
 
-#####################################################
+
 # SimpleForm
-#####################################################
+
 generate 'simple_form:install --bootstrap'
 
 
-#####################################################
+
 # Devise
-#####################################################
+
 generate 'devise:install'
 gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 generate 'devise user name:string'
@@ -121,9 +168,9 @@ inside 'app/views/devise' do
 end
 
 
-#####################################################
+
 # Admins
-#####################################################
+
 generate 'devise admin name:string'
 gsub_file 'config/routes.rb', /  devise_for :admins/ do <<-RUBY
    devise_for :admins, :controllers => { :sessions => "admins/sessions" }
@@ -139,9 +186,9 @@ get @path + 'app/views/admins/dashboard/index.html.haml', 'app/views/admins/dash
 get @path + 'app/views/admins/sessions/new.html.haml', 'app/views/admins/sessions/new.html.haml'
 
 
-#####################################################
+
 # admin.rb, user.rb and profile avatar image
-#####################################################
+
 
 remove_file 'app/models/user.rb'
 remove_file 'app/models/admin.rb'
@@ -152,33 +199,33 @@ get 'https://github.com/lab2023/template/raw/master/files/app/assets/images/defa
 rake 'db:migrate'
 
 
-#####################################################
+
 # Role Table
-#####################################################
+
 generate 'model role name:string'
 
 
-#####################################################
+
 # Responder
-#####################################################
+
 generate 'responders:install'
 
 
-#####################################################
+
 # Responder
-#####################################################
+
 generate 'show_for:install'
 
 
-#####################################################
+
 # CanCan
-#####################################################
+
 generate 'cancan:ability'
 
 
-#####################################################
+
 # Welcome and Dashboard
-#####################################################
+
 generate(:controller, 'pages')
 
 inject_into_file 'app/controllers/pages_controller.rb', :before => 'end' do <<-RUBY
@@ -196,9 +243,9 @@ route "root :to => 'pages#index'"
 get @path + 'app/views/pages/index.html.haml', 'app/views/pages/index.html.haml'
 
 
-#####################################################
+
 # Locale Settings
-#####################################################
+
 inject_into_file 'config/application.rb', :after => 'class Application < Rails::Application' do <<-RUBY
 
 
@@ -249,9 +296,9 @@ get @path + 'config/locales/validates_timeliness.tr.yml', 'config/locales/valida
 
 
 
-#####################################################
+
 # Mail Settings
-#####################################################
+
 inject_into_file 'config/environments/development.rb', :after => 'config.assets.debug = true' do <<-RUBY
 
   #Mail Settings
@@ -287,16 +334,18 @@ inject_into_file 'config/environments/production.rb', :after => 'config.active_s
 RUBY
 end
 
-#####################################################
+#Email layout
+
+get @path + 'app/views/layouts/email.html.haml', 'lib/templates/app/views/layouts/email.html.haml'
 # Controller
-#####################################################
+
 remove_file 'app/controllers/application_controller.rb'
 get @path + 'app/controllers/application_controller.rb', 'app/controllers/application_controller.rb'
 
 
-#####################################################
+
 #Title Helper
-#####################################################
+
 inject_into_file 'app/helpers/application_helper.rb', :before => 'end' do <<-RUBY
   def title(page_title)
     content_for(:title) { page_title }
@@ -305,9 +354,9 @@ RUBY
 end
 
 
-#####################################################
+
 # Clean-up
-#####################################################
+
 %w{
   README
   doc/README_FOR_APP
@@ -315,11 +364,12 @@ end
   app/assets/images/rails.png
 }.each { |file| remove_file file }
 
+#Change Application Name
+gsub_file 'app/views/layouts/application.html.haml', /Change Me/, "#{app_name.humanize.titleize}"
+gsub_file 'app/views/layouts/admins/application.html.haml', /Change Me/, "#{app_name.humanize.titleize}"
 
-
-#####################################################
 # Git
-#####################################################
+
 append_file '.gitignore' do <<-GIT
 /public/system
 /public/uploads
