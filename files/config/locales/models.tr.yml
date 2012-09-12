@@ -18,3 +18,11 @@ tr:
         locale: Dil
         remember_me: Beni Hatırla
         time_zone: Zaman Dilimi
+       admin:
+        name: Ad Soyad
+        email: E-Posta
+        password: Şifre
+        password_confirmation: Şifre (Tekrar)
+        current_password: Mevcut Şifreniz
+        remember_me: Beni Hatırla
+        time_zone: Zaman Dilimi
