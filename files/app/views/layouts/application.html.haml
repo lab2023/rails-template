@@ -46,12 +46,14 @@
             %div{:class => "alert alert-#{name}"}
               %a.close{"data-dismiss" => "alert", :href => "#"} &times;
               = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
-    .container.wrapper
-      .head.row-fluid
-        .span4.pull-left
-          = yield :toolbar_left
-        .span4.title
-          %h2= yield :title
-        .span4.pull-right
-          = yield :toolbar_right
-      = yield
+    .container
+      .wrapper
+        .wrap
+          .head.row-fluid
+            .span4.pull-left
+              = yield :toolbar_left
+            .span4.title
+              %h2= yield :title
+            .span4.pull-right
+              = yield :toolbar_right
+          = yield
