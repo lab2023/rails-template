@@ -173,7 +173,7 @@ end
 
 generate 'devise admin name:string'
 gsub_file 'config/routes.rb', /  devise_for :admins/ do <<-RUBY
-   devise_for :admins, :controllers => { :sessions => "admins/sessions" }
+   devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations =>  "admins/registrations"}
    namespace :admins do
     resources :dashboard
   end
