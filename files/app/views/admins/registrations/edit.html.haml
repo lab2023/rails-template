@@ -1,0 +1,13 @@
+= title t('tt.edit', resource_name: "Hesap ayarlarını")
+.row-fluid
+  .span12
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :validate => true, :html => { :method => :put, :class => 'form-horizontal validate'}) do |f|
+      = f.error_notification
+      .inputs
+        = f.input :name, :required => true, :autofocus => true
+        = f.input :email, :required => true
+        = f.input :password, :autocomplete => "off", :hint => "Bu alanı boş bırakırsanız şifreniz değişmeyecektir.", :required => false
+        = f.input :password_confirmation, :required => false
+        = f.input :current_password, :hint => "Bilgilerinizi güncelleyebilmemiz için şifrenize ihtiyacımız var.", :required => true
+      .form-actions
+        = f.button :submit, "Kaydet"

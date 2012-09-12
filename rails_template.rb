@@ -182,8 +182,10 @@ end
 get @path + 'app/controllers/admins/application_controller.rb', 'app/controllers/admins/application_controller.rb'
 get @path + 'app/controllers/admins/dashboard_controller.rb', 'app/controllers/admins/dashboard_controller.rb'
 get @path + 'app/controllers/admins/sessions_controller.rb', 'app/controllers/admins/sessions_controller.rb'
+get @path + 'app/controllers/admins/registrations_controller.rb', 'app/controllers/admins/registrations_controller.rb'
 get @path + 'app/views/admins/dashboard/index.html.haml', 'app/views/admins/dashboard/index.html.haml'
 get @path + 'app/views/admins/sessions/new.html.haml', 'app/views/admins/sessions/new.html.haml'
+get @path + 'app/views/admins/registrations/edit.html.haml', 'app/views/admins/registrations/edit.html.haml'
 
 
 
