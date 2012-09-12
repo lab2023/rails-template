@@ -48,6 +48,8 @@ end
 if resque_mailer
   puts "Adding resque_mailer gem  ..."
   gem 'resque_mailer'
+  puts "Adding god gem for resque production ..."
+  gem 'god', :require => false
   puts "Creating config/initializers/resque_mailer.rb ..."
   create_file 'config/initializers/resque_mailer.rb' do <<-'FILE'
   class AsyncMailer < ActionMailer::Base
@@ -72,6 +74,7 @@ gem 'simple_form'
 gem 'i18n'
 gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
+gem 'whenever', :require => false
 
 
 gem_group :assets do
@@ -95,7 +98,7 @@ run 'bundle install'
 rake 'db:drop'
 rake 'db:create'
 rake 'db:migrate'
-
+run 'wheneverize .'
 
 
 # Lib
