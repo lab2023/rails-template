@@ -9,7 +9,7 @@
 #####################################################
 
 
-@path = 'https://raw.github.com/lab2023/template/master/files/'
+@path = 'https://raw.github.com/lab2023/rails-template/master/files/'
 
 if yes?('Would you like to use the Sphinx search system? (yes/no)')
   sphinx_flag = true
