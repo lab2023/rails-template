@@ -1,6 +1,6 @@
 #####################################################
 # Application Generator Template
-# Usage: rails new APP_NAME  -T -m https://raw.github.com/lab2023/template/master/rails_template.rb
+# Usage: rails new APP_NAME  -T -m https://raw.github.com/lab2023/rails-template/master/rails_template.rb
 #
 # If you are customizing this template, you can use any methods provided by Thor::Actions
 # http://rubydoc.info/github/wycats/thor/master/Thor/Actions
