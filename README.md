@@ -37,7 +37,7 @@ Before generating your application, you will need:
 Usage
 -----
 ```ruby
-rails new APP_NAME -T -m https://raw.github.com/lab2023/template/master/rails_template.rb
+rails new APP_NAME -T -m https://raw.github.com/lab2023/rails-template/master/rails_template.rb
 ```
 
 Bugs and  Feedback
