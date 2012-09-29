@@ -44,14 +44,14 @@ Bugs and  Feedback
 ------------
 If you discover any bugs or want to drop a line, feel free to create an issue on GitHub.
 
-http://github.com/lab2023/template/issues
+http://github.com/lab2023/rails-template/issues
 
 Contributing
 ------------
 
 Once you've made your great commits:
 
-1. Fork Tempalte
+1. Fork Template
 2. Create a topic branch - `git checkout -b my_branch`
 3. Push to your branch - `git push origin my_branch`
 4. Create a Pull Request from your branch
@@ -60,7 +60,7 @@ Once you've made your great commits:
 Credits
 -------
 
-![lab2023 - internet tecnologics](http://lab2023.com/wp-content/uploads/2011/07/logo.png)
+![lab2023 - internet technologies](http://lab2023.com/wp-content/uploads/2011/07/logo.png)
 
 Template is maintained  by [lab2023 - internet technologies](http://lab2023.com/)
 
