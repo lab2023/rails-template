@@ -113,23 +113,21 @@ rake 'db:migrate'
 run 'wheneverize .'
 run 'rails g rspec:install'
 run 'mkdir spec/support spec/models spec/routing'
-run 'guard init spec'
-
 
 # Lib
 
 # Spec
-get @path + 'lib/spec/spec_helper.rb', 'spec/spec_helper.rb'
+remove_file 'spec/spec_helper.rb'
+get @path + 'spec/spec_helper.rb', 'spec/spec_helper.rb'
+get @path + 'Guardfile', 'Guardfile'
 
 # application.rb
 inject_into_file 'config/application.rb', :after => "config.assets.version = '1.0'" do <<-RUBY
 
-
+    # Factory Girls Rails gem
     config.generators do |g|
       g.fixture_replacement :factory_girl
     end
-
-
 RUBY
 end
 
