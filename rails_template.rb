@@ -113,12 +113,15 @@ rake 'db:migrate'
 run 'wheneverize .'
 run 'rails g rspec:install'
 run 'mkdir spec/support spec/models spec/routing'
+run 'guard init spec'
 
 # Lib
 
 # Spec
 remove_file 'spec/spec_helper.rb'
 get @path + 'spec/spec_helper.rb', 'spec/spec_helper.rb'
+
+remove_file 'Guardfile'
 get @path + 'Guardfile', 'Guardfile'
 
 # application.rb
