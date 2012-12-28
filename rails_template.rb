@@ -85,6 +85,18 @@ end
 
 gem_group :development, :test do
   gem 'sqlite3'
+  gem "rspec-rails", "~> 2.6"
+  gem "guard-rspec"
+  gem 'rb-fchange', :require => false if RUBY_PLATFORM =~ /mswin/i
+  gem 'rb-inotify', :require => false if RUBY_PLATFORM =~ /linux/i
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'growl', '1.0.3', :require => false if RUBY_PLATFORM =~ /darwin/i
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+  gem "capybara"
+  gem 'shoulda-matchers'
 end
 
 gem_group :production do
@@ -99,9 +111,28 @@ rake 'db:drop'
 rake 'db:create'
 rake 'db:migrate'
 run 'wheneverize .'
+run 'rails g rspec:install'
+run 'mkdir spec/support spec/models spec/routing'
+run 'guard init spec'
 
 
 # Lib
+
+# Spec
+get @path + 'lib/spec/spec_helper.rb', 'spec/spec_helper.rb'
+
+# application.rb
+inject_into_file 'config/application.rb', :after => "config.assets.version = '1.0'" do <<-RUBY
+
+
+    config.generators do |g|
+      g.fixture_replacement :factory_girl
+    end
+
+
+RUBY
+end
+
 
 # Haml views
 get @path + 'lib/templates/haml/scaffold/edit.html.haml', 'lib/templates/haml/scaffold/edit.html.haml'
@@ -115,15 +146,10 @@ get @path + 'lib/templates/rails/responders_controller/controller.rb', 'lib/temp
 # rake
 get @path + 'lib/tasks/dev.rake', 'lib/tasks/dev.rake'
 
-
-
 # SettingsLogic
-
 get @path + 'settings_logic/config.yml', 'config/application.yml'
 
-
 # Application Layout
-
 remove_file 'app/views/layouts/application.html.erb'
 get @path + 'app/views/layouts/application.html.haml', 'app/views/layouts/application.html.haml'
 get @path + 'app/views/layouts/admins/application.html.haml', 'app/views/layouts/admins/application.html.haml'
@@ -134,15 +160,10 @@ get @path + 'app/assets/javascripts/jquery.validate.js', 'app/assets/javascripts
 get @path + 'app/assets/javascripts/jquery.validate.bootstrap.js', 'app/assets/javascripts/jquery.validate.bootstrap.js'
 get @path + 'app/assets/stylesheets/application.css.scss', 'app/assets/stylesheets/application.css.scss'
 
-
 # SimpleForm
-
 generate 'simple_form:install --bootstrap'
 
-
-
 # Devise
-
 generate 'devise:install'
 gsub_file 'config/application.rb', /:password/, ':password, :password_confirmation'
 generate 'devise user name:string'
@@ -154,7 +175,6 @@ RUBY
 end
 
 gsub_file 'config/initializers/devise.rb', /please-change-me-at-config-initializers-devise@example.com/, 'CHANGEME@example.com'
-
 
 inside 'app/views/devise' do
   get @path + 'app/views/devise/confirmations/new.html.haml', 'confirmations/new.html.haml'
@@ -170,10 +190,7 @@ inside 'app/views/devise' do
   get @path + 'app/views/devise/unlocks/new.html.haml', 'unlocks/new.html.haml'
 end
 
-
-
 # Admins
-
 generate 'devise admin name:string'
 gsub_file 'config/routes.rb', /  devise_for :admins/ do <<-RUBY
    devise_for :admins, :controllers => { :sessions => "admins/sessions", :registrations =>  "admins/registrations"}
@@ -193,8 +210,6 @@ get @path + 'app/views/admins/registrations/edit.html.haml', 'app/views/admins/r
 
 
 # admin.rb, user.rb and profile avatar image
-
-
 remove_file 'app/models/user.rb'
 remove_file 'app/models/admin.rb'
 get @path + 'app/models/user.rb', 'app/models/user.rb'
@@ -203,34 +218,19 @@ get 'https://github.com/lab2023/rails-template/raw/master/files/app/assets/image
 
 rake 'db:migrate'
 
-
-
 # Role Table
-
 generate 'model role name:string'
 
-
-
 # Responder
-
 generate 'responders:install'
 
-
-
 # Responder
-
 generate 'show_for:install'
 
-
-
 # CanCan
-
 generate 'cancan:ability'
 
-
-
 # Welcome and Dashboard
-
 generate(:controller, 'pages')
 
 inject_into_file 'app/controllers/pages_controller.rb', :before => 'end' do <<-RUBY
