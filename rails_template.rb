@@ -93,7 +93,7 @@ gem_group :development, :test do
   gem 'growl', '1.0.3', :require => false if RUBY_PLATFORM =~ /darwin/i
 end
 
-group :test do
+gem_group :test do
   gem "factory_girl_rails", "~> 4.0"
   gem "capybara"
   gem 'shoulda-matchers'
