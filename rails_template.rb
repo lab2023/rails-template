@@ -139,6 +139,7 @@ end
 
 
 # Haml views
+get @path + 'lib/templates/haml/scaffold/_form.html.haml', 'lib/templates/haml/scaffold/_form.html.haml'
 get @path + 'lib/templates/haml/scaffold/edit.html.haml', 'lib/templates/haml/scaffold/edit.html.haml'
 get @path + 'lib/templates/haml/scaffold/index.html.haml', 'lib/templates/haml/scaffold/index.html.haml'
 get @path + 'lib/templates/haml/scaffold/new.html.haml', 'lib/templates/haml/scaffold/new.html.haml'
@@ -160,8 +161,6 @@ get @path + 'app/views/layouts/admins/application.html.haml', 'app/views/layouts
 
 remove_file 'app/assets/javascripts/application.js'
 get @path + 'app/assets/javascripts/application.js', 'app/assets/javascripts/application.js'
-get @path + 'app/assets/javascripts/jquery.validate.js', 'app/assets/javascripts/jquery.validate.js'
-get @path + 'app/assets/javascripts/jquery.validate.bootstrap.js', 'app/assets/javascripts/jquery.validate.bootstrap.js'
 get @path + 'app/assets/stylesheets/application.css.scss', 'app/assets/stylesheets/application.css.scss'
 
 # SimpleForm
