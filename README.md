@@ -12,6 +12,8 @@ This template includes
 * `haml`
 * `bootstrap-datepicker-rails`
 * `bootstrap`
+* `ransack`
+* `client_side_validations`
 
 gems. Scaffold generator views which were changed under `lib/templates`
 folder in templates.  When you use scaffolding, views are generated from these views. Template creates Admin namespace.
