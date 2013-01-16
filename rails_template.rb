@@ -76,6 +76,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'whenever', :require => false
 gem 'ransack'
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
 
 
 gem_group :assets do
@@ -231,6 +233,9 @@ generate 'show_for:install'
 
 # CanCan
 generate 'cancan:ability'
+
+# Client Side
+generate 'client_side_validations:install'
 
 # Welcome and Dashboard
 generate(:controller, 'pages')
@@ -416,4 +421,4 @@ rake 'dev:setup'
 
 git :init
 git :add => '.'
-git :commit => '-m "Issue #1 Install Rails "'
+git :commit => '-m "close #1 Install Rails "'

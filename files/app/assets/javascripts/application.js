@@ -14,15 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require bootstrap-datepicker
-//= require jquery.validate
-//= require jquery.validate.bootstrap
+//= require rails.validations
+//= require rails.validations.simple_form
+
 
 $(document).ready(function() {
-    $('form.validate').validate();
-
     $('.date_picker').datepicker( {
         language: "tr",
         format: 'yyyy-mm-dd'
-
     });
 });
