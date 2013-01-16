@@ -75,6 +75,7 @@ gem 'i18n'
 gem 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'whenever', :require => false
+gem 'ransack'
 
 
 gem_group :assets do
