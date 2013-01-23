@@ -79,6 +79,7 @@ gem 'ransack'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'turbolinks'
+gem 'strong_parameters'
 
 
 gem_group :assets do
@@ -148,6 +149,7 @@ get @path + 'lib/templates/haml/scaffold/show.html.haml', 'lib/templates/haml/sc
 
 # controller
 get @path + 'lib/templates/rails/responders_controller/controller.rb', 'lib/templates/rails/responders_controller/controller.rb'
+get @path + 'lib/templates/rails/strong_parameters_controller/controller.rb', 'lib/templates/rails/strong_parameters_controller/controller.rb'
 
 # rake
 get @path + 'lib/tasks/dev.rake', 'lib/tasks/dev.rake'

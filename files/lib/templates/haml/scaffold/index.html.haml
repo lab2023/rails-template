@@ -9,7 +9,7 @@
 <% end -%>
 - content_for :toolbar_right do
   = search_form_for @search do |f|
-    = f.text_field :<%= @search[1..@search.size-4] %>_cont, id: 'search_<%= singular_table_name %>',  :placeholder => "Search...", :class => 'search-query', :autofocus => true
+    = f.text_field :<%= @search[1..@search.size-4] %>_cont, id: 'search_<%= table_name %>', :class => 'search-query',  :placeholder => "Search...", :autofocus => true
     = f.submit t('search'), :class => 'btn'
 
 %table.table.table-striped.table-bordered.table-condensed
@@ -17,7 +17,7 @@
 <% for attribute in attributes -%>
     %th= sort_link(@search, :<%= attribute.name %>, t('activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>'))
 <% end -%>
-    %th{:width => "120px"}
+    %th{:width => "130px"}
   - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
     %tr
 <% for attribute in attributes -%>
