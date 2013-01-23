@@ -78,6 +78,7 @@ gem 'whenever', :require => false
 gem 'ransack'
 gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
+gem 'turbolinks'
 
 
 gem_group :assets do
