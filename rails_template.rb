@@ -347,7 +347,7 @@ end
 
 #Email layout
 
-get @path + 'app/views/layouts/email.html.haml', 'lib/templates/app/views/layouts/email.html.haml'
+get @path + 'app/views/layouts/email.html.haml', 'app/views/layouts/email.html.haml'
 # Controller
 
 remove_file 'app/controllers/application_controller.rb'
