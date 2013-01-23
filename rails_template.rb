@@ -105,7 +105,7 @@ gem_group :test do
 end
 
 gem_group :production do
-  gem 'mysql2'
+  gem 'pg', :require => false
 end
 
 
