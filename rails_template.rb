@@ -96,6 +96,7 @@ gem_group :development, :test do
   gem 'rb-inotify', :require => false if RUBY_PLATFORM =~ /linux/i
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'growl', '1.0.3', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'sextant'
 end
 
 gem_group :test do
