@@ -97,6 +97,7 @@ gem_group :development, :test do
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'growl', '1.0.3', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'sextant'
+  gem 'meta_request', '0.2.1'
 end
 
 gem_group :test do
