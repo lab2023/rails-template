@@ -98,6 +98,7 @@ gem_group :development, :test do
   gem 'growl', '1.0.3', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'sextant'
   gem 'meta_request', '0.2.1'
+  gem "better_errors"
 end
 
 gem_group :test do
