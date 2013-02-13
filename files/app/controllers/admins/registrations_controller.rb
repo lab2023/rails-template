@@ -1,10 +1,10 @@
 class Admins::RegistrationsController < Devise::RegistrationsController
   def new
-    redirect_to admins_dasboard_index_path
+    redirect_to admins_dashboard_index_path
   end
 
   def create
-    redirect_to admins_dasboard_index_path
+    redirect_to admins_dashboard_index_path
   end
 
   def update
