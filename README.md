@@ -3,7 +3,7 @@ lab2023 - Rails Template
 
 This template includes
 
-** Assets **
+**Assets**
 
 * sass-rails
 * coffee-rails
@@ -13,7 +13,7 @@ This template includes
 * bootstrap-sass
 * jquery-ui-rails
 
-** UX Companent **
+**UX Companent**
 
 * show_for
 * simple_form
@@ -25,14 +25,14 @@ This template includes
 * client_side_validations
 * client_side_validations-simple_form
 
-** Server site & Deployment **
+**Server site & Deployment**
 
 * god
 * resque
 * resque_mailer
 * whenever
 
-** Other **
+**Other**
 
 * cancan
 * devise
@@ -43,7 +43,7 @@ This template includes
 * turbolinks
 * strong_parameters
 
-** Test **
+**Test**
 
 * factory_girl_rails
 * capybara
@@ -52,7 +52,7 @@ This template includes
 * guard-rspec
 * rb-inotify
 
-** Development **
+**Development**
 
 * sextant
 * meta_request
