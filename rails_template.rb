@@ -132,16 +132,6 @@ get @path + 'spec/spec_helper.rb', 'spec/spec_helper.rb'
 remove_file 'Guardfile'
 get @path + 'Guardfile', 'Guardfile'
 
-# application.rb
-inject_into_file 'config/application.rb', :after => "config.assets.version = '1.0'" do <<-RUBY
-
-    # Factory Girls Rails gem
-    config.generators do |g|
-      g.fixture_replacement :factory_girl
-    end
-RUBY
-end
-
 
 # Haml views
 get @path + 'lib/templates/haml/scaffold/_form.html.haml', 'lib/templates/haml/scaffold/_form.html.haml'
