@@ -3,17 +3,60 @@ lab2023 - Rails Template
 
 This template includes
 
-* `devise`
-* `simple_form`
-* `responder`
-* `show_for`
-* `paperclip`
-* `will_paginate`
-* `haml`
-* `bootstrap-datepicker-rails`
-* `bootstrap`
-* `ransack`
-* `client_side_validations`
+** Assets **
+
+* sass-rails
+* coffee-rails
+* uglifier
+* jquery-rails
+* compass-rails
+* bootstrap-sass
+* jquery-ui-rails
+
+** UX Companent **
+
+* show_for
+* simple_form
+* haml-rails
+* will_paginate
+* bootstrap-will_paginate
+* will-paginate-i18n
+* bootstrap-datepicker-rails
+* client_side_validations
+* client_side_validations-simple_form
+
+** Server site & Deployment **
+
+* god
+* resque
+* resque_mailer
+* whenever
+
+** Other **
+
+* cancan
+* devise
+* responders
+* i18n
+* paperclip
+* ransack
+* turbolinks
+* strong_parameters
+
+** Test **
+
+* factory_girl_rails
+* capybara
+* shoulda-matchers
+* rspec-rails
+* guard-rspec
+* rb-inotify
+
+** Development **
+
+* sextant
+* meta_request
+* better_errors
 
 gems. Scaffold generator views which were changed under `lib/templates`
 folder in templates.  When you use scaffolding, views are generated from these views. Template creates Admin namespace.
