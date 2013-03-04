@@ -326,8 +326,8 @@ end
 
 #Email layout
 get @path + 'app/views/layouts/email.html.haml', 'app/views/layouts/email.html.haml'
-# Controller
 
+# Controller
 remove_file 'app/controllers/application_controller.rb'
 get @path + 'app/controllers/application_controller.rb', 'app/controllers/application_controller.rb'
 
@@ -381,6 +381,9 @@ nbproject
 .idea/**/*
 GIT
 end
+
+# README.md
+get @path + 'README.md', 'README.md'
 
 remove_file 'app/assets/stylesheets/application.css'
 rake 'db:migrate'
