@@ -1,4 +1,4 @@
-#####################################################
+##
 # Application Generator Template
 # Usage: rails new APP_NAME  -T -m https://raw.github.com/lab2023/rails-template/master/rails_template.rb
 #
@@ -6,8 +6,6 @@
 # http://rubydoc.info/github/wycats/thor/master/Thor/Actions
 # and Rails::Generators::Actions
 # http://github.com/rails/rails/blob/master/railties/lib/rails/generators/actions.rb
-#####################################################
-
 
 @path = 'https://raw.github.com/lab2023/rails-template/master/files/'
 
@@ -61,7 +59,6 @@ if resque_mailer
 end
 
 # Gems
-
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem "will-paginate-i18n", "~> 0.1.7"
@@ -80,7 +77,6 @@ gem 'client_side_validations'
 gem 'client_side_validations-simple_form'
 gem 'turbolinks'
 gem 'strong_parameters'
-
 
 gem_group :assets do
   gem 'bootstrap-sass'
@@ -111,9 +107,7 @@ gem_group :production do
   gem 'pg', :require => false
 end
 
-
 # Bundle
-
 run 'bundle install'
 rake 'db:drop'
 rake 'db:create'
@@ -131,7 +125,6 @@ get @path + 'spec/spec_helper.rb', 'spec/spec_helper.rb'
 
 remove_file 'Guardfile'
 get @path + 'Guardfile', 'Guardfile'
-
 
 # Haml views
 get @path + 'lib/templates/haml/scaffold/_form.html.haml', 'lib/templates/haml/scaffold/_form.html.haml'
@@ -206,8 +199,6 @@ get @path + 'app/views/admins/dashboard/index.html.haml', 'app/views/admins/dash
 get @path + 'app/views/admins/sessions/new.html.haml', 'app/views/admins/sessions/new.html.haml'
 get @path + 'app/views/admins/registrations/edit.html.haml', 'app/views/admins/registrations/edit.html.haml'
 
-
-
 # admin.rb, user.rb and profile avatar image
 remove_file 'app/models/user.rb'
 remove_file 'app/models/admin.rb'
@@ -249,10 +240,7 @@ end
 route "root :to => 'pages#index'"
 get @path + 'app/views/pages/index.html.haml', 'app/views/pages/index.html.haml'
 
-
-
 # Locale Settings
-
 inject_into_file 'config/application.rb', :after => 'class Application < Rails::Application' do <<-RUBY
 
 
@@ -262,7 +250,6 @@ inject_into_file 'config/application.rb', :after => 'class Application < Rails::
 
 RUBY
 end
-
 
 remove_file "config/locales/devise.en.yml"
 remove_file "config/locales/en.yml"
@@ -301,11 +288,7 @@ get @path + 'config/locales/title.en.yml', 'config/locales/title.en.yml'
 get @path + 'config/locales/title.tr.yml', 'config/locales/title.tr.yml'
 get @path + 'config/locales/validates_timeliness.tr.yml', 'config/locales/validates_timeliness.tr.yml'
 
-
-
-
 # Mail Settings
-
 inject_into_file 'config/environments/development.rb', :after => 'config.assets.debug = true' do <<-RUBY
 
   #Mail Settings
@@ -342,17 +325,13 @@ RUBY
 end
 
 #Email layout
-
 get @path + 'app/views/layouts/email.html.haml', 'app/views/layouts/email.html.haml'
 # Controller
 
 remove_file 'app/controllers/application_controller.rb'
 get @path + 'app/controllers/application_controller.rb', 'app/controllers/application_controller.rb'
 
-
-
 #Title Helper
-
 inject_into_file 'app/helpers/application_helper.rb', :before => 'end' do <<-RUBY
   def title(page_title)
     content_for(:title) { page_title }
@@ -360,10 +339,7 @@ inject_into_file 'app/helpers/application_helper.rb', :before => 'end' do <<-RUB
 RUBY
 end
 
-
-
 # Clean-up
-
 %w{
   README
   doc/README_FOR_APP
@@ -376,7 +352,6 @@ gsub_file 'app/views/layouts/application.html.haml', /Change Me/, "#{app_name.hu
 gsub_file 'app/views/layouts/admins/application.html.haml', /Change Me/, "#{app_name.humanize.titleize}"
 
 # Git
-
 append_file '.gitignore' do <<-GIT
 /public/system
 /public/uploads
@@ -407,12 +382,10 @@ nbproject
 GIT
 end
 
-
 remove_file 'app/assets/stylesheets/application.css'
 rake 'db:migrate'
 generate 'paperclip user avatar'
 rake 'dev:setup'
-
 
 git :init
 git :add => '.'

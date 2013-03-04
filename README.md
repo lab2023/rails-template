@@ -1,5 +1,4 @@
-lab2023 - Rails Template
-=========
+# lab2023 - Rails Template
 
 This template includes
 
@@ -72,27 +71,26 @@ and saving fixtures data processes. When template is installed, Records
 which are `user@lab2023.com`  `12341234` at users table and `admin@lab2023.com` `1234134` at admins table are saved. Admin
 page can be accessed from `/admins/sign_in`.
 
-Requirements
-------------
+## Requirements
+
 Before generating your application, you will need:
 
 * The Ruby language (version 1.9.3)
 * Rails 3.2
 
-Usage
------
+## Usage
+
 ```ruby
 rails new APP_NAME -T -m https://raw.github.com/lab2023/rails-template/master/rails_template.rb
 ```
 
-Bugs and  Feedback
-------------
+## Bugs and  Feedback
+
 If you discover any bugs or want to drop a line, feel free to create an issue on GitHub.
 
 http://github.com/lab2023/rails-template/issues
 
-Contributing
-------------
+## Contributing
 
 Once you've made your great commits:
 
@@ -102,13 +100,15 @@ Once you've made your great commits:
 4. Create a Pull Request from your branch
 5. That's it!
 
-Credits
--------
+## Credits
 
-Template is maintained  by [lab2023 - internet technologies](http://lab2023.com/)
+Rails Template is maintained and funded by [lab2023 - internet technologies](http://lab2023.com/)
 
-License
--------
+Thank you to all the [contributors!](https://github.com/lab2023/rails-template/graphs/contributors)
+
+The names and logos for lab2023 are trademarks of lab2023, inc.
+
+## License
 
 [MIT License](http://www.opensource.org/licenses/mit-license)
 
