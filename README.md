@@ -67,7 +67,11 @@ This rake do
 * `db:migrate`
 * `db:seed`
 
-and saving fixtures data processes. When template is installed, Records
+and saving fixtures data processes. 
+
+## Deafult Users
+
+When template is installed, Records
 which are `user@lab2023.com`  `12341234` at users table and `admin@lab2023.com` `1234134` at admins table are saved. Admin
 page can be accessed from `/admins/sign_in`.
 
